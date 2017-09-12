@@ -1,0 +1,13 @@
+/* pages/Store/Store.wxss */
+@import "../index/index.wxss";
+.food_num {
+  margin:40rpx 0;
+}
+
+.food_mall{
+  background-color:#44aca6;
+}
+
+.food_card{
+  border: none;
+}

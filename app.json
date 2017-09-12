@@ -1,0 +1,29 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/Wallet/Wallet",
+    "pages/Load/Load",
+    
+    "pages/Notice/Notice",
+    "pages/uploadQrCode/uploadQrCode",
+    "pages/loadEmail/loadEmail",
+    "pages/Help/Help",
+    
+    "pages/ModifyData/ModifyData",
+    "pages/Mine/Mine",
+    "pages/myRescue/myRescue",
+    
+    "pages/rescueMeList/rescueMeList",
+    "pages/rescueMe/rescueMe",
+    "pages/upload/upload",
+    "pages/Store/Store"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "有只单身狗",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":false
+  }
+}

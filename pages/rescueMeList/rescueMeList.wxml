@@ -1,0 +1,70 @@
+<!--pages/rescueMeList/rescueMeList.wxml-->
+<view class="container">
+   <view class="noData" wx:if="{{list.length<1?true:false}}">暂时没有数据</view>
+   <view class="list_item" wx:for="{{list}}">
+       <block>
+          <view wx:if="{{item.type==0}}" class="persion_img persion_img_wait" style="background-image:url({{item.avatarurl}})"></view>
+          <image wx:else="" class="persion_img" src="{{item.avatarurl}}"></image>
+       </block>
+       <view class="persion_name">{{item.wx_name}}</view>
+       <view class="dog_food_num"><view class="dog_food_icon"></view><view>x{{item.expend}}</view></view>
+       <block>
+         <view wx:if="{{item.type==0}}" class="see_info has_refuse">已拒绝</view>
+         <!-- <view wx:elif="{{true}}">已接受</view> -->
+         <view wx:elif="{{item.type==2||item.type==3}}" class="see_info" data-did="{{item.did}}" data-type="{{item.type}}" data-expend="{{item.expend}}" bindtap="seeInfo">查看信息</view>
+       </block>
+   </view>
+
+  <!-- 单身狗资料 -->
+  <view class="single_dog_info {{cardDisplay}}" wx:if="{{infoCard}}">
+     <view class="info_card {{cardOut}}">
+         <view class="card_top">
+            <view class="close_card" catchtap="closeCard"></view>
+            <image class="card_persion" src="{{dogInfo.avatarurl}}"></image>
+            <view class="card_name">{{dogInfo.wx_name}}<image class="sex_icon sex_woman"></image></view>
+            <view class="lavel">Lv.{{dogInfo.level}}</view>
+         </view>
+
+         <view class="card_bottom card_bottom_info" wx:if="{{true}}">
+              <view class="dog_info">
+                  <view class="info_item">
+                        <view>性别：{{dogInfo.sex==1?"男":"女"}}</view>
+                        <view>年龄：{{dogInfo.age}}</view>
+                        <view>身高：{{dogInfo.height}}cm</view>
+                  </view>
+                  <view class="info_item">
+                        <view>城市：{{dogInfo.city}}</view>
+                        <view>体重：{{dogInfo.weight}}kg</view>
+                        <view>学历：{{dogInfo.education}}</view>
+                  </view>
+              </view>
+              <view class="persion_enjoy">兴趣：{{dogInfo.hobby}}</view>
+
+              <block>
+               <view class="persion_image">
+                  <view class="images_box" wx:if="{{giveDogInfo}}">
+                     <view class="">Ta的照片</view>
+                     <image class="images_image" data-src="{{dogInfo.photo}}" bindtap="prewImg" src="{{dogInfo.photo[0]}}"></image>
+                   </view>
+                <block>
+                    <view class="card_status" wx:if="{{hasGiveStatus}}">
+                        <view class="dog_food_box"><view class="dog_food_icon"></view><view>x{{dogInfo.expend}}</view></view>
+                        <view class="dog_food_opation" catchtap="acceptFood" data-did="{{dogInfo.did}}">接受狗粮</view>
+                        <view class="dog_food_opation" catchtap="refuseFood" data-did="{{dogInfo.did}}">拒绝狗粮</view>
+                    </view>
+                    <view class="has_refuse_food" wx:elif="{{otherRecouse}}">
+                        <view class="dog_food_box"><view class="dog_food_icon"></view><view>x{{dogInfo.expend}}</view></view>
+                        <view class="dog_food_tip">已拒绝</view>
+                    </view>
+                    <view class="has_refuse_food" wx:elif="{{hasAgree}}">
+                        <view class="dog_food_box"><view class="dog_food_icon"></view><view>x{{dogInfo.expend}}</view></view>
+                        <view class="dog_food_tip">已接受</view>
+                    </view>
+                </block>
+              </view>
+            </block>
+         </view>
+     </view>
+  </view>
+
+</view>

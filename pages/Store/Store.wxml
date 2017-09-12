@@ -1,0 +1,11 @@
+<!--pages/Store/Store.wxml-->
+<view class="food_mall {{cardDisplay}}" wx:if="{{true}}">
+    <view class="food_card {{cardOut}}">
+        <!-- <view class="close_card" catchtap="closeMall"></view> -->
+        <view  wx:for="{{dogFood}}" wx:key="index" class="card_food">
+            <image class="food_img" src="{{item.picture}}"></image>
+            <view class="food_num">{{item.description}}</view>
+            <view class="pay_food" bindtap="buyStoreDogFood" data-gid="{{item.gid}}"  data-gidnum="{{item.number}}" data-price="{{item.price}}">￥{{item.price}}</view>
+        </view>
+    </view>
+</view>

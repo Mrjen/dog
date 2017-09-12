@@ -1,0 +1,24 @@
+<!--pages/Wallet/Wallet.wxml-->
+<view class="container">
+   <view class="money_box">
+      <view class="money_num">{{account}}<text>元</text></view>
+      <view class="money_tip">账户余额</view>
+   </view>
+   <view class="rechare">
+      <view>输入充值金额：</view>
+      <input  bindinput="bindChangeKeyInput" type="number" placeholder=""/>
+      <view>元</view>
+   </view>
+   <view class="recharge_btn" bindtap="rechangeMyWallet">充值到我的钱包</view>
+   <view class="opations_tip">使用说明</view>
+   <view class="num_tip">最少充值1元，每日最多可提现1000元</view>
+
+   <!-- <view class="rechare">
+      <view>输入充值金额：</view>
+      <input  bindinput="bindKeyInput" type="number" placeholder=""/>
+      <view>元</view>
+   </view> -->
+   <!-- <view class="num_tip num_tip2">最少充值20元，每日最多可提现1000元</view>
+   <view class="recharge_btn">提现到微信零钱</view>
+   <view class="opations_tip">提现说明</view> -->
+</view>

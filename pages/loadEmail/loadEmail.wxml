@@ -1,0 +1,74 @@
+<!--pages/loadEmail/loadEmail.wxml-->
+<view class="music_play">
+  <image wx:if="{{musicPlay}}" class="play_icon" bindtap="stopMusic" src="../img/home_icon_playmusic.png"></image>
+  <image wx:else="" bindtap="playMusic" src="../img/home_icon_stopmusic.png"></image>
+</view>
+<!-- 音乐停止 -->
+
+<!-- 信件 -->
+<view class="email_box {{outLeft}}">
+  <swiper class="swiper_box" indicator-dots="{{false}}" current="{{current}}" interval="5000" duration="500" indicator-active-color="#fff" indicator-color="rgba(255,255,255,.5)">
+    <!-- <swiper-item>
+       <view class="email_content email_content_page1 {{bounceInDown}}" bindtouchstart="{{touchplayMusic}}">
+          <view class="email_title">有只单身狗</view>
+          <view class="item_content">1.单身的你无奈工作太忙，生活圈子太小，在这个忙碌的城市里，每天都与缘分擦肩而过，却没有方法让彼此相识。</view>
+          <view class="item_content">2.[有只单身狗]本着简单、心动、惊喜的原则，以双向“一见钟情”的方式找到那个ta，相遇本该是如此美好。</view>
+          <view class="item_content">3.通过地理定位解救身边的单身狗，让社交变得更有趣，更有缘分。</view>
+          <view class="item_content">最终解释权归本公司所有</view>
+      </view>
+    </swiper-item> -->
+    <swiper-item>
+       <view class="email_content">
+         <view class="email_title">有只单身狗</view>
+         <view class="item_content">为了提高用户的体验感，用户需要填写基本的个人信息，在这个看脸的年代，请如实填写哟，毕竟有可能关乎你的终生幸福哟~~</view>
+         <view class="info_box">
+            <view class="info_left">
+              <view class="avatar_box"><image class="up_avatar" mode="widthFix" src="{{upAvatar}}" catchtap="upAvatar"></image></view>
+              <view class="image_tip">本人照片</view>
+            </view>
+            <view  class="info_left">
+              <view class="code_box"><image class="up_ercode" mode="widthFix" src="{{wxCode}}" catchtap="wxCode"></image></view>
+              <view class="image_tip">微信二维码</view>
+            </view>
+         </view>
+
+         <view class="section age_section">
+            <view class="section__title">年龄：</view>
+            <picker bindchange="bindPickerAge" value="{{7}}" range="{{ageArr}}">
+              <view class="picker">
+                {{ageArr[indexAge]}}
+              </view>
+            </picker>
+        </view>
+
+        <view class="section age_section">
+           <view class="section__title">性别：</view>
+           <picker bindchange="bindPickerSex" value="{{index}}" range="{{sexPicker}}">
+             <view class="picker">
+               {{sexPicker[indexSex]}}
+             </view>
+           </picker>
+       </view>
+
+       <view class="section age_section">
+          <view class="section__title">身高：</view>
+          <picker bindchange="bindPickerBodyHeight" value="{{79}}" range="{{bodyHeight}}">
+            <view class="picker">
+              {{bodyHeight[indexHeight]}}
+            </view>
+          </picker>
+      </view>
+
+      <view class="section age_section">
+         <view class="section__title">城市：</view>
+         <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+           <view class="picker">
+             {{region[0]}}，{{region[1]}}，{{region[2]}}
+           </view>
+         </picker>
+     </view>
+       </view>
+       <view class="sure_btn" hover-class="sure_hover" bindtap="sureInfo">确定</view>
+    </swiper-item>
+  </swiper>
+</view>

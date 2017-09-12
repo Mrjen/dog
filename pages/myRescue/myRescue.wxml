@@ -1,0 +1,91 @@
+<!--pages/myRescue/myRescue.wxml-->
+<view class="container">
+    <view class="noData" wx:if="{{list.length<1?true:false}}">暂时没有数据</view>
+    <view  class="list_item" wx:for="{{list}}">
+       <block>
+          <image wx:if="{{item.type=='2'}}" class="persion_img" src="{{item.avatarurl}}"></image>
+          <view wx:else="" class="persion_img persion_img_wait" style="background-image:url({{item.avatarurl}})"></view>
+       </block>
+       <view class="persion_name">{{item.persion_name}}</view>
+       <view class="dog_food_num"><view class="dog_food_icon"></view><view>x{{item.expend}}</view></view>
+       <block>
+         <view wx:if="{{item.type=='3'}}" class="see_info" bindtap="retractDogFood" data-did="{{item.did}}">撤回狗粮</view>
+         <view wx:elif="{{item.type=='0'}}" class="see_info has_refuse">已拒绝</view>
+         <!-- <view wx:elif="{{true}}">已接受</view> -->
+         <view wx:elif="{{item.type=='2'||item.type=='1'}}" class="see_info" data-type="{{item.type}}" data-did="{{item.did}}" data-expend="{{item.expend}}" bindtap="seeInfo">查看信息</view>
+       </block>
+   </view>
+  <!-- 单身狗资料 -->
+  <view class="single_dog_info {{cardDisplay}}" wx:if="{{infoCard}}">
+     <view class="info_card {{cardOut}}">
+         <view class="card_top">
+            <view class="close_card" catchtap="closeCard"></view>
+            <image class="card_persion" src="{{dogInfo.avatarurl}}"></image>
+            <view class="card_name">{{dogInfo.wx_name}}<image class="sex_icon {{dogInfo.sex=='1'?'sex_man':'sex_woman'}}"></image></view>
+            <view class="lavel">Lv.{{dogInfo.level}}</view>
+         </view>
+
+         <view class="card_bottom" wx:if="{{!hasRecouse}}">
+           <view class="card_title">单身狗</view>
+           <view class="card_tip">至少需要{{dogInfo.expend}}份狗粮解救她</view>
+           <view class="opation_btn"  catchtap="RescueHe" data-mid="{{dogInfo.mid}}" data-expend="{{dogInfo.expend}}">
+             <view class="dognum_icon"></view>x{{dogInfo.expend}}</view>
+           <view class="opation_btn"><button class="share_btn" open-type="share">邀请好友解救</button></view>
+           <view class="opation_btn" catchtap="buyDogFood">购买狗粮</view>
+           <view class="opation_btn" catchtap="closeCard">不救了不救了</view>
+           <view class="card_bottom_tip">邀请一位好友即可立即解救</view>
+         </view>
+
+         <view class="card_bottom card_bottom_info" wx:if="{{dogInfo}}">
+              <view class="dog_info">
+                  <view class="info_item">
+                        <view>性别：{{dogInfo.sex=='1'?'男':'女'}}</view>
+                        <view>年龄：{{dogInfo.age}}</view>
+                        <view>身高：{{dogInfo.height}}cm</view>
+                  </view>
+                  <view class="info_item">
+                        <view>城市：{{dogInfo.city}}</view>
+                        <view>体重：{{dogInfo.weight}}kg</view>
+                        <view>学历：{{dogInfo.education}}</view>
+                  </view>
+              </view>
+              <view class="persion_enjoy">兴趣：{{dogInfo.hobby}}</view>
+
+              <block>
+                  <view class="has_give_food" wx:if="{{hasDogFood}}">
+                      <!-- <image src="https://single-dog.playonwechat.com/static/home/has_give_food_bg.png"></image> -->
+                      <view class="has_give_text">系统已将你的爱心狗粮送上，期待对方为你爱的转身~</view>
+                  </view>
+                  <view class="fail_give_food" wx:if="{{failRecouse}}">
+                      <image class="fail_icon" src="https://single-dog.playonwechat.com/static/home/home_fail_icon.png"></image>
+                      <image class="dog_icon" src="https://single-dog.playonwechat.com/static/home/home_fail_dog.png"></image>
+                      <view class="fail_tip">这只单身汪冲着你狂叫！吓得你拿着狗粮撒腿就跑......</view>
+                      <view class="fail_tip">狗粮已成功退换到口袋</view>
+                  </view>
+              <view class="persion_image">
+                  <view class="images_box" wx:if="{{giveDogInfo}}">
+                     <view class="">Ta的照片</view>
+                     <image class="images_image" bindtap="prewImg" data-src="{{dogInfo.photo}}" src="{{dogInfo.photo[0]}}"></image>
+                   </view>
+                <block>
+                    <view  class="images_box" wx:if="{{hasAgree}}">
+                      <image class="ercode" bindtap="prewImgCode" data-qrcode="{{dogInfo.qrcode}}" src="{{dogInfo.qrcode}}"></image>
+                      <view>Ta的微信二维码</view>
+                    </view>
+                    <view class="card_status" wx:if="{{hasGiveStatus}}">
+                        <view class="dog_food_box"><view class="dog_food_icon"></view><view>x555</view></view>
+                        <view class="dog_food_opation" catchtap="acceptFood">接受狗粮</view>
+                        <view class="dog_food_opation" catchtap="refuseFood">拒绝狗粮</view>
+                    </view>
+                    <view class="has_refuse_food" wx:if="{{otherRecouse}}">
+                        <view class="dog_food_box"><view class="dog_food_icon"></view><view>x555</view></view>
+                        <view class="dog_food_tip">已拒绝</view>
+                    </view>
+                </block>
+              </view>
+            </block>
+         </view>
+     </view>
+  </view>
+
+</view>

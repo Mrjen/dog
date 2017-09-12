@@ -1,0 +1,64 @@
+<!--pages/Mine/Mine.wxml-->
+<view class="container">
+    <image class="persion_img" src="{{avatarUrl}}"></image>
+    <text class="persion_name"  bindtap="editInfo">{{nickName}}<text class="edit_info"></text></text>
+    <view>LV.{{persionInfo.level}}</view>
+    <view class="info_box">
+        <view class="info_item">
+            <view>性别：{{persionInfo.sex}}</view>
+            <view>年龄：{{persionInfo.age}}</view>
+            <view>身高：{{persionInfo.height}}cm</view>
+        </view>
+        <view class="info_item">
+            <view>城市：{{persionInfo.city}}</view>
+            <view>体重：{{persionInfo.weight}}kg</view>
+            <view>学历：{{persionInfo.education}}</view>
+        </view>
+    </view>
+    <view class="enjoy">兴趣：{{persionInfo.hobby}}</view>
+    <view class="props_box">
+       <view class="props_left">
+            <view class="props_num">
+                <view class="props_icon"></view>
+                <view>x{{persionInfo.rescue_number}}</view>
+            </view>
+            <view class="whate_dog" bindtap="toSeeDog">查看单身狗</view>
+       </view>
+       <view class="props_left">
+            <view class="props_num">
+                <view class="props_icon props_icon2"></view>
+                <view>x{{persionInfo.dog_food}}</view>
+            </view>
+            <view class="whate_dog" bindtap="buyDogFood">购买狗粮</view>
+       </view>
+       <view class="props_left" bindtap="prewQrCode">
+            <view class="props_num">
+                <image class="qrcode_icon" src="../img/home_persion_qrcode.png"></image>
+            </view>
+            <view class="whate_dog">我的二维码</view>
+       </view>
+    </view>
+    <!-- <view class="props_box props_box2">
+        <view class="step_box">
+            <view>步行距离</view>
+            <view>{{persionInfo.walking_distance}}m</view>
+        </view>
+        <view class="step_box">
+          <view>遇见单身狗</view>
+          <view>{{persionInfo.meet_number}}只</view>
+        </view>
+    </view> -->
+    <view class="code_box">
+       <scroll-view class="photo_scroll" scroll-x>
+         <view class="photo_content">
+          <view class="ercode_out" wx:for="{{persionInfo.photo}}"><image class="ercode" catchtap="prewPhoto" data-src="{{item}}" mode="widthFix" src="{{item}}"></image></view>
+          </view>
+       </scroll-view>
+    </view>
+    <!-- <view class="ercode_text">点击图片更换二维码</view> -->
+</view>
+<view class="bottom_nav">
+    <view wx:for="{{navData}}" class="nav_item">
+      <image bindtap="checkNav" data-inx="{{index}}" class="nav_icon" src="{{item.hoverIcon==false?item._src:item.hover_src}}"></image>
+    </view>
+</view>

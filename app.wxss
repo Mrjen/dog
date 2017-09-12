@@ -1,0 +1,45 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.music_play image{
+   width: 100%;
+   height: 100%;
+   display: block;
+   position: relative;
+}
+
+.music_play{
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  top: 40rpx;
+  right: 40rpx;
+  z-index: 1000;
+}
+
+.music_play .play_icon{
+  animation: paly_music 2s linear infinite;
+}
+
+@keyframes paly_music {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+
+.noData{
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  font-size: 30rpx;
+}

@@ -1,0 +1,222 @@
+/* pages/ModifyData/ModifyData.wxss */
+.base_info{
+  border-top: 20rpx solid #f4f1f4;
+  width: 100%;
+  font-size: 32rpx;
+}
+
+.img_name{
+  font-size: 34rpx;
+  width: 730rpx;
+  margin-left: 20rpx;
+  display: flex;
+  min-height: 100rpx;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding:10rpx 20rpx;
+}
+
+.img_name:nth-of-type(1){
+  border-bottom:1px solid #f4f1f4;
+}
+
+.tip{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #f4f1f4;
+  font-size: 26rpx;
+  text-indent: 20rpx;
+  border-top: 1px solid #edeaed;
+  border-bottom: 1px solid #edeaed;
+}
+
+.label{
+  display: flex;
+  font-size: 34rpx;
+  width: 730rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 20rpx;
+  padding-right: 60rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border-bottom: 1px solid #f4f1f4;
+}
+
+picker{
+  min-width: 600rpx;
+  text-align: right;
+}
+
+.img_name image{
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.enjoy{
+  border:none;
+  box-sizing: border-box;
+  padding-top: 40rpx;
+  overflow: hidden;
+  height: 230rpx;
+}
+
+.enjoy  textarea{
+  display: block;
+  height: 150rpx;
+  width: 550rpx;
+  border:1px solid #f4f1f4;
+  box-sizing: border-box;
+  padding:20rpx;
+  font-size: 30rpx;
+  margin-bottom: 100rpx;
+}
+
+.picker{
+  position: relative;
+}
+
+.picker::before{
+  content: "";
+  display: block;
+  width: 21rpx;
+  height: 40rpx;
+  position: absolute;
+  right: -32rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAdCAYAAAB1yDbaAAAAtUlEQVQ4jZ3VvQ2DMBBA4WcLpcogVLcOFWWGyAaZIWUqNmGJKA1bUKVwkJDjn7ujARffuxONg4iMwAfYMT4RuAMLcPHgGxA8gUhad/IE4u/tCsTTtzkQs7MpkGNToITVgRpWBVq4G+jhZkCDqwEtLgXGICIGD8AVeAObZTKkdV/ACsyDES6ktSdg107+g6D7YUWowVXYw03Ywl1YwypYwmqYYxM8YzM8sAse+OmBAAPwwHlXfQG70jmROUEEEAAAAABJRU5ErkJggg==');
+  background-size: 21rpx 40rpx;
+}
+
+.submit{
+  width: 500rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  background: #389f99;
+  margin: 40rpx auto;
+  border-radius: 4rpx;
+}
+
+.submit:active{
+  background: #40b0a9;
+}
+
+/*照片*/
+.colse_photo_box {
+  color: #fff;
+  position: absolute;
+  margin-top: 0;
+  margin-left: 0;
+  width: 21px;
+  height: 21px;
+  right: 100rpx;
+  top: 80rpx;
+}
+
+.colse_photo_box:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 21px;
+  height: 1px;
+  background-color: currentColor;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.colse_photo_box:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 21px;
+  height: 1px;
+  background-color: currentColor;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.photo_box{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.photo_img_box{
+  width: 450rpx;
+  height: 800rpx;
+  margin:0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  border:1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo{
+   display: block;
+   width: 450rpx;
+}
+
+.edit_photo{
+  min-height: 150rpx;
+  flex: 1;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.photo_label{
+  height: auto !important;
+}
+
+.img_out{
+  display: inline-block;
+  height: 120rpx;
+  position: relative;
+}
+
+.photo_img{
+  width: 116rpx;
+  height: 116rpx;
+  margin:5rpx;
+}
+
+.delete_picture{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+}
+
+.delete_icon{
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+  margin:0 auto;
+}
+
+.photo_tip{
+  display: inline-block;
+  color: #fff;
+  font-size: 30rpx;
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  padding:10rpx;
+  border-radius: 10rpx;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 250rpx;
+}

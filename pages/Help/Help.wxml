@@ -1,0 +1,27 @@
+<!--pages/Help/Help.wxml-->
+<view class="container">
+    <view>游戏帮助</view>
+    <view class="help_title">◆用户发现单身狗条件（用户）：</view>
+    <view class="help_text">发现：在地图上以用户为单位可以发现方圆2公里所有的单身狗！</view>
+    <view class="help_text">添加：在地图上以用户为单位500米之内可点开单身狗资料添加解救！</view>
+
+    <view class="help_title">◆发现获取狗粮：</view>
+    <view class="help_text">用户可探测2公里以内所有的狗粮位置！</view>
+    <view class="help_text">以狗粮方圆100米为准，用户距离狗粮≤ 100米，即可点击领取。</view>
+    <view class="help_text">反之用户距离狗粮>100米 无法点击领取</view>
+    <view class="help_text">每处狗粮1小时内只可领取一次，1小时候后可以重复领取第二次 </view>
+    <view class="help_text">每天同一地点=24次</view>
+
+    <view class="help_title">◆解救单身狗：</view>
+    <view class="help_text">第一次被解救消耗狗粮 11 个 ，之后每次解救会叠加，当用户被解救N次，狗粮数量达到99 将不再增加</view>
+
+    <view class="help_title">◆单身狗用户被解救:</view>
+    <view class="help_text">如有用户解救，会收到短信提示，可以选择同意或者拒绝！</view>
+    <view class="help_text">成功解救：彼此可以看到资料，获得微信二维码图片：请在它还没变心之前，赶紧长按二维码添加！ </view>
+    <view class="help_text">拒绝解救：消耗的狗粮会在24小时之后退还给解救我的人。</view>
+
+    <view class="help_title">◆获得狗粮方式（用户）:</view>
+    <view class="help_text">1.用户通过运动在地图寻找领取获得</view>
+    <view class="help_text">2.商场购买</view>
+    <view class="help_text">3.被解救获得</view>
+</view>

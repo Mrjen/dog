@@ -1,0 +1,184 @@
+<!-- 地图 -->
+<map id="map"
+  longitude="{{circles[0].longitude}}"
+  latitude="{{circles[0].latitude}}"
+  scale="{{mapScale}}"
+  controls="{{controls}}"
+  bindcontroltap="controltap"
+  markers="{{markerData}}"
+  bindmarkertap="markertap"
+  polyline="{{polyline}}"
+  bindregionchange="regionchange" show-location
+  circles="{{circles}}" style="display:{{displayMap}}" hidden="{{mapHidden}}">
+                        <!-- {{displayMap}}          {{mapHidden}} -->
+
+    <!-- 倒计时 -->
+    <cover-view class="count_down" wx:if="{{hasFoodCard}}">
+        {{countDown}}分钟内获得狗粮加倍
+    </cover-view>
+    <!-- 单身狗提示 -->
+    <cover-view class="rescue_dog_tip" wx:if="{{TipBox}}">
+        {{rescueDogTip}}
+    </cover-view>
+    <!-- 狗粮数 -->
+    <cover-view class="nav_food_num">
+        <cover-image class="food_cover_image" src="../img/home_persion_dognum.png"></cover-image><cover-view class="food_cover_num">x{{nav_food_num}}</cover-view>
+    </cover-view>
+</map>
+
+<!-- 闪屏 -->
+<view class="loading_box {{fadeOutLeft}}" style="display:none">
+   <image class="load_logo" src="../img/home_loading_logo.png"></image>
+   <view class="circle">
+      <view class="item_circle circle1">
+         <view class="item_circle circle2">
+            <view class="item_circle circle3"></view>
+          </view>
+      </view>
+   </view>
+ </view>
+
+ <!-- 底部导航栏 -->
+   <view class="info_nav">
+       <view class="nav_left_section">
+          <image class="persion_img" bindtap="OpenRedWallet" src="{{avatarUrl}}"></image>
+          <view class="left_info">
+            <view class="level_box"><view>Lv.{{level}}</view><view>{{walkDistance}}m</view></view>
+            <view class="persion_border"><view class="prograss" style="width:{{prograss}}rpx"></view></view>
+            <view class="persion_name">{{nickName}}</view>
+          </view>
+       </view>
+       <view class="options_box">
+          <view class="persion_center_box" bindtap="toPersionCenter"><image class="persion_center" src="../img/home_persion_center.png" ></image>个人</view>
+          <view class="notice_box" bindtap="toNotice">
+               <view class="red_point" wx:if="{{Notice>0}}"></view>
+               <view  class="persion_center_box" ><image class="to_otice" src="../img/home_persion_notice.png"></image>消息</view>
+          </view>
+       </view>
+       <view class="props_box">
+         <view class="open_mall" bindtap="openMall">
+           <image class="mall_icon" src="../img/home_persion_shop.png"></image><view class="num_cover_view">商店</view></view>
+         <view class="dog_num" bindtap="toHelp">
+           <image class="dog_num_icon" src="../img/home_persion_help.png"></image><view  class="num_cover_view">帮助</view></view>
+       </view>
+   </view>
+
+<!-- 狗粮卡 -->
+<view class="dog_food_card" wx:if="{{dogFoodCard}}">
+   <view class="food_card double_card">
+    <view class="close_card" bindtap="closeFoodCard"></view>
+     <view class="food_card_text_box">
+       <view class="food_card_text">成功邀请1位好友加入</view>
+       <view class="food_card_text">即可获得</view>
+       <view class="food_card_text">30分钟 VIP狗粮加倍卡*1</view>
+       <image class="dog_food" src="https://single-dog.playonwechat.com/static/home/home_dog_fooddouble_card.png"></image>
+       <view class="receive_btn"><button open-type="share">立即领取</button></view>
+    </view>
+  </view>
+</view>
+
+<!-- 狗粮提示 -->
+<view class="dog_tip_box" wx:if="{{DogTip}}">
+   <view class="tip_card {{openDogTip}}">
+     <view class="close_dog_tip" bindtap="CloseDogTip"></view>
+     <view class="tip_title"></view>
+     <view class="tip_dog_food_num">狗粮X{{expend}}</view>
+     <view class="tip_text">狗粮领取说明：当您距离狗粮小于等于50m时即可领取狗粮</view>
+     <block>
+       <view wx:if="{{distance>50}}" class="not_get_dog_food">不可领取</view>
+       <!-- <view wx:else="" class="get_dog_food_btn" bindtap="getDogFoodBtn">领取</view> -->
+     </block>
+   </view>
+</view>
+
+<!-- 红包层   未打开 -->
+<view class="red_wallet {{RedWallet}}" style="display:{{redWalletDisplay}}">
+    <view class="close_red_wallet" bindtap="closeWallet"></view>
+    <view class="red_wallet_text red_wallet_text1">恭喜您</view>
+    <view class="red_wallet_text">获得现金红包</view>
+    <view class="get_red_wallet {{getwallet}}" bindtap="getRedWallet"></view>
+</view>
+
+<view class="has_open_redwallet {{HasGetRedWallet}}">
+     <view class="close_get_wallet" bindtap="closeGetWallet"></view>
+    <view class="has_get_wallet">恭喜您,抢到红包获得</view>
+    <view class="get_wallet_num">{{redPacketNum}}<text>元</text></view>
+    <view class="get_wallet_tip">已存入钱包，可在商城使用</view>
+</view>
+
+
+<!-- 单身狗资料 -->
+<view class="single_dog_info" wx:if="{{infoCard}}">
+  <view class="info_card {{cardaInOut}}">
+    <view class="card_top">
+      <view class="close_card" catchtap="closeCard"></view>
+      <image class="card_persion" src="{{dogInfo.avatarurl}}"></image>
+      <view class="card_name">{{dogInfo.wx_name}}
+        <image class="sex_icon {{dogInfo.sex==1?'sex_man':'sex_woman'}}"></image>
+      </view>
+      <view class="lavel">Lv.{{dogInfo.level}}</view>
+    </view>
+    <view class="card_bottom" wx:if="{{!hasRecouse}}">
+      <view class="card_title">单身狗</view>
+      <view class="card_tip">至少需要{{expend}}份狗粮解救她</view>
+      <view class="opation_btn" catchtap="rescueHer">
+        <view class="dognum_icon"></view>x{{expend}}</view>
+      <view class="opation_btn"><button class="share_btn" open-type="share">邀请好友解救</button></view>
+      <view class="opation_btn" catchtap="buyDogFood">购买狗粮</view>
+      <view class="opation_btn" catchtap="closeCard">不救了不救了</view>
+      <view class="card_bottom_tip">邀请一位好友即可立即解救</view>
+    </view>
+    <view class="card_bottom card_bottom_info" wx:if="{{dogInfoBox}}">
+      <view class="dog_info">
+        <view class="info_item">
+          <view>性别：{{dogInfo.sex==1?"男":"女"}}</view>
+          <view>年龄：{{dogInfo.age}}</view>
+          <view>身高：{{dogInfo.height}}cm</view>
+        </view>
+        <view class="info_item">
+          <view>城市：{{dogInfo.city}}</view>
+          <view>体重：{{dogInfo.weight}}kg</view>
+          <view>学历：{{dogInfo.education}}</view>
+        </view>
+      </view>
+      <view class="persion_enjoy">兴趣：{{dogInfo.hobby}}</view>
+      <block>
+
+        <view class="has_give_food" wx:if="{{hasDogFood}}">
+          <!-- <image src="https://single-dog.playonwechat.com/static/home/has_give_food_bg.png"></image> -->
+          <view  class="fail_tip">系统已将你的爱心狗粮送上，期待对方为你爱的转身~</view>
+        </view>
+        <view class="fail_give_food" wx:elif="{{failRecouse}}">
+            <image class="fail_icon" src="../img/home_fail_icon.png"></image>
+            <image class="dog_icon" src="../img/home_fail_dog.png"></image>
+            <view class="fail_tip">这是一只有性格的单身狗，对你的狗粮表示不感兴趣，狗粮已原路返回哟</view>
+            <view class="fail_tip">狗粮已成功退换到口袋</view>
+        </view>
+        <view class="persion_image" wx:if="{{giveDogInfo}}">
+            <view class="images_box">
+              <view class="">Ta的照片</view>
+              <image class="images_image" bindtap="prewPhoto" data-src="{{dogInfo.photo}}" src="{{dogInfo.photo[0]}}"></image>
+            </view>
+            <view class="images_box">
+              <image class="ercode" src="{{avatarUrl}}"></image>
+              <view>Ta的微信二维码</view>
+            </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!-- 商城  -->
+<view class="food_mall {{cardDisplay}}" wx:if="{{foodMall}}">
+  <view class="food_card {{cardOut}}">
+    <view class="close_card" catchtap="closeMall"></view>
+    <view wx:for="{{dogFood}}" wx:key="index" class="card_food">
+      <image class="food_img" src="{{item.picture}}"></image>
+      <view class="food_num">{{item.description}}</view>
+      <view class="pay_food" data-gid="{{item.gid}}" data-gidnum="{{item.number}}" data-price="{{item.price}}" bindtap="buyStoreDogFood">￥{{item.price}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- <map id="map" longitude="10" latitude="10" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map> -->

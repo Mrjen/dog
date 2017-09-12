@@ -1,0 +1,77 @@
+/* pages/Wallet/Wallet.wxss */
+page{
+  background: #389f99;
+}
+
+.container{
+  box-sizing: border-box;
+  padding-top: 80rpx;
+}
+
+.money_num{
+  font-size: 100rpx;
+  font-weight: bold;
+  color: #fff;
+}
+
+.money_num text{
+  font-size: 40rpx;
+}
+
+.money_tip{
+  color: #fff;
+  font-size: 34rpx;
+  margin-top: 10rpx;
+  text-indent: 50rpx;
+}
+
+.rechare{
+  display: flex;
+  width: 460rpx;
+  height: 70rpx;
+  margin:50rpx auto;
+  background: #fff;
+  justify-content: space-around;
+  line-height: 70rpx;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  padding:0 10rpx;
+  font-size: 32rpx;
+}
+
+.rechare input{
+  display: block;
+  width: 150rpx;
+  height: 70rpx;
+  box-sizing: border-box;
+  padding:4rpx 10rpx;
+}
+
+.recharge_btn{
+   width: 258rpx;
+   height: 60rpx;
+   text-align: center;
+   line-height: 60rpx;
+   color: #fff;
+   background: #07ba39;
+   font-size: 29rpx;
+   border-radius: 8rpx;
+}
+
+.opations_tip{
+  font-size: 28rpx;
+  color: #12577f;
+  margin:20rpx auto;
+  text-decoration: underline;
+}
+
+.num_tip{
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 120rpx;
+}
+
+.num_tip2{
+  margin-top: 80rpx;
+  margin-bottom: 20rpx;
+}

@@ -1,0 +1,87 @@
+<!--pages/ModifyData/ModifyData.wxml-->
+<view class="container">
+   <view class="base_info">
+     <view class="img_name"><view>头像</view><image src="{{avatarUrl}}"></image></view>
+     <view class="img_name"><view>昵称</view><view>{{nickName}}</view></view>
+   </view>
+   <view class="tip">基本资料</view>
+   <view class="label">
+     <view>性别</view>
+       <view>
+         {{Sex[Sexindex]}}
+          <!-- <picker bindchange="bindSexChange" value="{{index}}" range="{{Sex}}">
+              <view class="picker">{{Sex[Sexindex]}}</view>
+          </picker> -->
+      </view>
+   </view>
+   <view class="label">
+     <view>年龄</view>
+     <view>
+        <picker bindchange="bindAgeChange" value="{{Ageindex}}" range="{{ageArr}}">
+            <view class="picker">{{ageArr[Ageindex]}}</view>
+        </picker>
+    </view>
+   </view>
+   <view class="label">
+     <view>体重</view>
+     <view>
+        <picker bindchange="bindWeightChange" value="{{weightindex}}" range="{{weightArr}}">
+            <view class="picker">{{weightArr[weightindex]}}kg</view>
+        </picker>
+    </view>
+   </view>
+   <view class="label">
+     <view>身高</view>
+     <view>
+        <picker bindchange="bindHeightChange" value="{{heightindex}}" range="{{bodyHeight}}">
+            <view class="picker">{{bodyHeight[heightindex]}}cm</view>
+        </picker>
+    </view>
+   </view>
+   <view class="label">
+     <view>学历</view>
+     <view>
+        <picker bindchange="bindEducationChange" value="{{index}}" range="{{Education}}">
+            <view class="picker">{{Education[Educationindex]}}</view>
+        </picker>
+    </view>
+   </view>
+   <view class="label">
+     <view>城市</view>
+     <view>
+          <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+            <view class="picker">
+              {{region[0]}}{{region[1]}}{{region[2]}}
+            </view>
+          </picker>
+    </view>
+   </view>
+   <view class="label photo_label">
+     <view>我的照片</view>
+     <view  class="edit_photo">
+         <view wx:for="{{upImg}}" class="img_out">
+            <view class="delete_picture" bindtap="deletePicture" data-index="{{index}}"><image class="delete_icon" src="{{deletePicture}}"></image></view>
+            <image class="photo_img" src="{{item}}" catchtap="prewPicture" data-src="{{item}}"></image>
+          </view>
+         <image class="photo_img" catchtap="AddPhoto" src="https://single-dog.playonwechat.com/static/home/add_img.png"></image>
+     </view>
+   </view>
+   <view class="label enjoy">
+     <view>兴趣</view>
+     <textarea bindinput="bindTextAreaBlur" cursor-spacing="100" value="{{hobby}}" placeholder="请输入您的兴趣爱好"/>
+   </view>
+
+<view class="submit" hover-class="submit_active" bindtap="submitInfo">提交</view>
+
+ <!-- bindtap="MyPhoto" -->
+
+<!-- 二维码弹窗 -->
+<view class="photo_box" wx:if="{{persionPhoto}}">
+   <view class="colse_photo_box" bindtap="closePhoto"></view>
+   <view class="photo_img_box" bindtap="upPhoto">
+       <image wx:for="{{photoList}}" src="{{photoList}}"></image>
+       <image mode="widthFix" class="photo" src="{{photo}}"></image>
+   </view>
+   <view class="photo_tip">点击图片更换,记得提交保存哦</view>
+</view>
+</view>

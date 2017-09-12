@@ -1,0 +1,54 @@
+<!--pages/Load/Load.wxml-->
+<!-- 信件 -->
+<view class="next_step" bindtap="nextStep"  style="display:{{emailLevel}}">跳过</view>
+<view class="email_level" style="display:{{emailLevel}}">
+  <view class="email_level_in">
+    <view class="gradient_top"></view>
+    <view class="text_content">
+        <view class="text_content_in" style="margin-top:{{textContent}}">
+            <text>各位单身汪们好，欢迎来到单身狗联盟</text>
+            <text>【有只单身狗】是一款有趣的社交软件</text>
+            <text>能够通过平台上提供的“狗粮”解救身边的单身狗</text>
+            <text>让社交变得更有趣</text>
+            <text>更有缘分</text>
+            <text>如果你</text>
+            <text>漫漫长夜无心睡眠</text>
+            <text>只想找个ta来陪</text>
+            <text>解决你的所有“需求”</text>
+            <text>帮你快速邂逅美女</text>
+            <text>“勾搭”上土豪</text>
+            <text>屌丝也能成功逆袭</text>
+            <text>一键解救，向心仪的ta表达好感</text>
+            <text>看上就直接“勾搭”呗</text>
+            <text>全民颜值担当</text>
+            <view class="space"></view>
+
+            <text>我们将会为大家提供添加微信好友功能</text>
+            <text>添加与否一切采取自愿的原则</text>
+            <text>一切采取自愿的原则</text>
+            <text>不可能被不喜欢的人骚扰</text>
+            <text>为了提高用户的体验感</text>
+            <text>用户需要填写基本的个人信息</text>
+            <text>在这个看脸的年代</text>
+            <text>请如实填写哟</text>
+            <text>毕竟有可能关乎你的终生幸福哟</text>
+            <view class="space"></view>
+
+            <text>最终解释权归本公司所有</text>
+            <text>祝您游戏愉快</text>
+            <text>早日脱单</text>
+            <text>汪!</text>
+        </view>
+    </view>
+    <view class="gradient_bottom"></view>
+    </view>
+</view>
+
+<view class="foot_btn_box">
+  <view class="foot_box_in">
+      <image bindtap="toIndex" class="dog_foot" src="https://single-dog.playonwechat.com/static/home/load_dog_foot.png"></image>
+      <view class="tip">点击进入单身狗的世界</view>
+      <view class="tip">你准备好了么</view>
+      <image class="shadow" src="https://single-dog.playonwechat.com/static/home/load_shadow.png"></image>
+  </view>
+</view>

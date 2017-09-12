@@ -1,0 +1,186 @@
+/* pages/Mine/Mine.wxss */
+page{
+  background-color:#389f99;
+}
+
+.container{
+  justify-content: flex-start;
+  color: #fff;
+  font-size: 30rpx;
+  width: 100%;
+  padding:0 40rpx;
+  box-sizing: border-box;
+  background: #389f99;
+}
+
+.info_box{
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.persion_img{
+  width: 140rpx;
+  height: 140rpx;
+  margin:20rpx auto;
+  border-radius: 50%;
+}
+
+.info_box .info_item{
+  flex:1;
+}
+
+.info_box .info_item view{
+  text-indent: 100rpx;
+  margin:20rpx 0;
+}
+
+.enjoy{
+  box-sizing: border-box;
+  padding:0 10rpx;
+  text-align: left;
+  width: 540rpx;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  padding-bottom: 20rpx;
+  padding-left: 30rpx;
+}
+
+
+.props_box{
+  display: flex;
+  justify-content: space-between;
+  width: 540rpx;
+  box-sizing: border-box;
+  padding:40rpx 0;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+.props_num{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrcode_icon{
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.props_icon2{
+  width: 50rpx;
+  height: 50rpx;
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_persion_dognum.png) !important;
+  background-size:50rpx 50rpx;
+}
+
+.props_icon{
+  width: 50rpx;
+  height: 50rpx;
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_persion_dogfooter.png);
+  background-size:50rpx 50rpx;
+}
+
+
+
+.whate_dog{
+  font-size: 26rpx;
+  border:1px solid #fff;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  box-sizing: border-box;
+  width:150rpx;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+}
+
+.props_box2{
+  display: block;
+}
+
+.props_box2 .step_box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.code_box{
+  width: 540rpx;
+  height: 350rpx;
+  display: flex;
+  align-items: flex-end;
+  margin:30rpx auto;
+  overflow: hidden;
+  margin-bottom: 250rpx;
+}
+
+.photo_scroll{
+  display: block;
+  width: 540rpx;
+  height: 100%;
+}
+
+.photo_content{
+  display: flex;
+  height: 100%;
+}
+
+.ercode_out{
+  height: 100%;
+  display: flex;
+  width: 198rpx;
+  margin-right: 20rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.ercode{
+  display: block;
+  width: 198rpx;
+  height: 350rpx;
+}
+
+.ercode_text{
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 200rpx;
+}
+
+.edit_info{
+  display: inline-block;
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAABiklEQVRYhc3XoU/DQBTH8V9hjARBggGJBTeNXIIAhSH8HYgpNsQy/gMshgAaARj+B9zCwGHRA0XyRdCSg3Ftr+3d8ZJLLr32vU9e07tUgAKOReAMmALnwLzt3tCoO37GhQ0XE5WLi42y4kLAusBHAWwGF+pVHrjifGL2gR6wUgXnCzUwCo2BNUfcqW+UiVt1wE1DoKrgrkKhXHC3QDskqgzuBmjT0FfpgsrDfaOagFVBmbjlNE/XRNWF1UFl0bPln1O1GEgaVnzWjLF1JVKnAI7y6vxLlCssGMoFFhRVFhYcVQYWBVUEi4bKg0VF2WDRUX/BOg2h+nVQMHskJQ0cMwNJo9pZUuEusJ3OhzE7lY1s0gfeDNxJTJQJu0yTV8U1ijJhD0YRV1zjqAyWpBgzyuK8oDLYuqVoEc4bKoPt5HTExI2M68c+URnsMAf2G9cBtnyjALUkbRRsdUuSriXtSbqvvXGWjJakTcvau6QnSRN9/TQshEJJUgJMJL1KepT0nCImkl4kERJjxicgdntfJHmcRwAAAABJRU5ErkJggg==');
+  background-size: 24rpx 24rpx;
+}
+
+.persion_name{
+  /*display: inline-block;*/
+}
+
+/*底部导航*/
+.bottom_nav{
+  width: 100%;
+  height: 108rpx;
+  background: #badad7;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+}
+
+.nav_icon{
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.nav_item{
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

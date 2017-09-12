@@ -1,0 +1,19 @@
+/* pages/Help/Help.wxss */
+.container{
+  box-sizing: border-box;
+  padding:50rpx 40rpx;
+  text-align: left;
+  align-items:flex-start;
+}
+
+.help_title{
+  font-size: 32rpx;
+  color: #333;
+  padding:20rpx 0;
+}
+
+.help_text{
+  font-size: 29rpx;
+  color: #666;
+  line-height: 2;
+}

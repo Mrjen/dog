@@ -1,0 +1,1333 @@
+page{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_map_bg.png);
+  background-size: 100% 100%;
+}
+
+/*loading*/
+.loading_box{
+  width: 100%;
+  height: 100%;
+  background: #389f99;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin:0 auto;
+  z-index: 100;
+}
+
+.load_logo{
+  display: block;
+  width: 455rpx;
+  height: 569rpx;
+  margin:0 auto;
+  margin-top: 210rpx;
+  animation: load_logo 1.5s infinite;
+}
+
+/*闪屏动画*/
+@keyframes load_logo {
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  50%{
+    transform: translate3d(0, 40rpx, 0);
+  }
+}
+
+@keyframes circle2 {
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  50%{
+    transform: translate3d(0, 10rpx, 0);
+  }
+}
+
+.circle{
+  width: 200rpx;
+  height: 100rpx;
+  margin:0 auto;
+  margin-top: 80rpx;
+}
+
+.circle .item_circle {
+  position: relative;
+}
+
+.circle .circle1{
+  width: 188rpx;
+  height: 46rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  background: rgba(255,255,255,.3);
+}
+
+.circle .circle2{
+  width: 150rpx;
+  height: 38rpx;
+  border-radius: 50%;
+  margin-top: -10rpx;
+  display: flex;
+  justify-content: center;
+  background: rgba(255,255,255,.5);
+  animation: circle2 1.5s infinite;
+}
+
+.circle .circle3{
+  width: 102rpx;
+  height: 26rpx;
+  margin-top:-10rpx;
+  border-radius: 50%;
+  background: rgba(255,255,255,.8);
+  animation: circle2 1.5s infinite;
+}
+
+.fadeOutLeft{
+  animation: fadeOutLeft 1s forwards;
+}
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0)
+  }
+}
+
+
+/*信件*/
+.email_box{
+  width: 100%;
+  height: 100%;
+  background: #389f99;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.email_content{
+  width: 615rpx;
+  height: 850rpx;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8rpx;
+  padding:20rpx 60rpx;
+  box-sizing: border-box;
+}
+
+.email_content_page1{
+  opacity: 0;
+}
+
+.swiper_box{
+  width:100%;
+  height: 100%;
+}
+
+.swiper_box swiper-item{
+  display: flex;
+  box-sizing: border-box;
+  padding-top: 150rpx;
+  align-items: center;
+  flex-direction: column;
+  z-index: 20 !important;
+  position: absolute !important;
+}
+
+.email_title{
+  width: 100%;
+  text-align: center;
+  margin-top: 40rpx;
+  font-size: 36rpx;
+}
+
+.item_content{
+  font-size: 30rpx;
+  line-height: 1.6;
+  margin:30rpx 0;
+  text-align: justify;
+}
+
+.indicator-color{
+  background: #fff;
+}
+
+.avatar_box{
+  width: 140rpx;
+  height: 140rpx;
+  overflow: hidden;
+  display: block;
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_loading_upload.png);
+  background-size: 100%;
+}
+
+.up_avatar{
+  width: 140rpx;
+}
+
+.info_box{
+  display: flex;
+  justify-content: space-between;
+  width: 360rpx;
+  margin:0 auto;
+  margin-bottom: 30rpx;
+}
+
+.up_ercode{
+  display: block;
+}
+
+.code_box{
+  width: 140rpx;
+  height: 140rpx;
+  overflow: hidden;
+  display: flex;
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_loading_upload.png);
+  align-items: flex-end;
+  background-size: 100%;
+}
+
+.image_tip{
+  font-size: 30rpx;
+  margin-top: 14rpx;
+  text-align: center;
+}
+
+.section{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+
+.age_section .section__title{
+  margin-right: 14rpx;
+}
+
+.age_section .section__title,.age_section picker{
+  display: inline-block;
+  font-size: 28rpx;
+}
+
+.age_section .picker{
+  min-width: 200rpx;
+  max-width: 340rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 50rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+  padding:0 5rpx;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4rpx;
+  border:1px solid #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.age_section .picker_address{
+  width: 200rpx;
+  height: 50rpx;
+  display: inline-block;
+  border:2px solid red;
+}
+
+.sure_btn{
+  width: 250rpx;
+  height: 74rpx;
+  border-radius: 50rpx;
+  border:1px solid #fff;
+  line-height: 74rpx;
+  text-align: center;
+  margin-top: 50rpx;
+}
+
+.outLeft{
+  animation:outLeft 1s forwards;
+}
+
+@keyframes outLeft {
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(-750rpx, 0, 0);
+    -ms-transform: translate3d(-750rpx, 0, 0);
+    transform: translate3d(-750rpx, 0, 0)
+  }
+}
+
+/*地图*/
+#map{
+  width: 100%;
+  height: 85vh;
+  box-sizing: border-box;
+}
+
+.rescue_dog_tip{
+  width: 100%;
+  background: rgba(247, 186, 42, 0.8);
+  color: #fff;
+  text-align: center;
+  font-size: 26rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+
+/*底部信息栏*/
+.info_nav{
+  width: 100%;
+  height: 15vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 30rpx 27rpx;
+  background: rgba(56, 159, 153, 1);
+}
+
+.persion_img{
+  width: 106rpx;
+  height: 106rpx;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border:8rpx solid rgba(255, 255, 255, 0.5);
+  margin-right: 20rpx;
+}
+
+.nav_left_section{
+  display: flex;
+  width: 360rpx;
+  height: 150rpx;
+  align-items: center;
+}
+
+.left_info{
+   color: #fff;
+   flex:1;
+   width: 200rpx;
+   overflow: hidden;
+}
+
+.level_box{
+  display: flex;
+  font-size: 29rpx;
+}
+
+.level_box view{
+  flex:1;
+}
+
+.level_box view:nth-of-type(2){
+  text-align: right;
+}
+
+.persion_name{
+  position: relative;
+  margin-top: 10rpx;
+  max-width: 310rpx;
+  font-size: 29rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prograss{
+  height: 2px;
+  background: #46cfce;
+}
+
+.persion_border{
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  margin: 10rpx 0;
+}
+
+.options_box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.options_box .persion_center{
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  font-size: 30rpx;
+  color: #fff;
+  margin-right: 10rpx;
+}
+
+.persion_center_box{
+  display: flex;
+  align-content: center;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+
+.options_box .to_otice{
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  font-size: 30rpx;
+  color: #fff;
+  margin-right: 10rpx;
+}
+
+.notice_box{
+  position: relative;
+}
+
+.red_point{
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: red;
+  border-radius: 50%;
+  right:0;
+  position: absolute;
+  top: 0;
+}
+
+.props_box{
+  color: #fff;
+  font-size: 36rpx;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.props_box view{
+  position: relative;
+  height: 50rpx;
+}
+
+.props_box view::before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: -80rpx;
+}
+
+.open_mall,.dog_num{
+  line-height: 50rpx;
+  vertical-align: bottom;
+  display: flex;
+}
+
+.props_box .mall_icon{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+}
+
+.props_box .dog_num_icon{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+}
+
+.num_cover_view{
+  font-size: 26rpx;
+  line-height: 50rpx;
+}
+
+/*资料展示*/
+.single_dog_info{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.info_card{
+  width: 580rpx;
+  height: 906rpx;
+  border-radius: 20rpx;
+  margin:0 auto;
+  margin-top: 50rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.close_card {
+  color: #fff;
+  position: absolute;
+  margin-top: 0;
+  margin-left: 0;
+  width: 21px;
+  height: 21px;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.close_card:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 21px;
+  height: 1px;
+  background-color: currentColor;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.close_card:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 21px;
+  height: 1px;
+  background-color: currentColor;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.card_top{
+  height: 268rpx;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  background: rgba(54, 135, 130, 0.9);
+}
+
+.card_persion{
+  display: block;
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+  margin:0 auto;
+}
+
+.card_name{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+
+.sex_icon{
+  width: 14rpx;
+  height: 24rpx;
+  margin-left: 14rpx;
+}
+
+.sex_man{
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_sex_man.png);
+  background-size: 100% 100%;
+}
+
+.sex_woman{
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_sex_woman.png);
+  background-size: 100% 100%;
+}
+
+.lavel{
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.card_bottom{
+  width: 100%;
+  height: 650rpx;
+  background: #fff;
+  text-align: center;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  padding-top: 66rpx;
+  position: relative;
+}
+
+.dognum_icon{
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_persion_dognum.png);
+  background-size: 100% 100%;
+}
+
+.opation_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_title{
+  margin-bottom: 20rpx;
+}
+
+.card_tip{
+  margin-bottom: 48rpx;
+}
+
+.opation_btn{
+  width: 200rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  border:1px solid #666;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin:0 auto;
+  margin-bottom: 18rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+}
+
+.opation_btn .share_btn{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border:none;
+  background: transparent;
+  padding:0 !important;
+  font-size: 26rpx;
+  line-height: 60rpx;
+}
+
+.opation_btn .share_btn::after{
+  display: none;
+}
+
+.card_bottom_tip{
+  font-size: 20rpx;
+  color: #999;
+  text-align: center;
+  position: absolute;
+  bottom: 10rpx;
+  width: 100%;
+  left: 0;
+}
+
+.card_bottom_info{
+  background: rgba(54, 135, 130, 0.9);
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+}
+
+.dog_info{
+  display: flex;
+}
+
+.info_item{
+  flex:1;
+  color: #fff;
+  text-align: left;
+  box-sizing: border-box;
+  padding-left: 60rpx;
+  line-height: 1.8;
+}
+
+.persion_enjoy{
+  text-align: left;
+  box-sizing: border-box;
+  color: #fff;
+  line-height: 1.8;
+  padding: 30rpx 0;
+  margin:0 auto;
+  width: 460rpx;
+  border-bottom: 1px solid #fff;
+}
+
+.persion_image{
+  display: flex;
+  height: 366rpx;
+  width: 460rpx;
+  margin:0 auto;
+}
+
+.persion_image .images_box{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.persion_image .images_box image{
+  display: block;
+  margin:10rpx 0;
+}
+
+.images_image{
+  width: 140rpx;
+  height: 250rpx;
+  display: block;
+  border:2px solid #fff;
+  border-radius: 8rpx;
+}
+
+.ercode{
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.images_box{
+  margin:10rpx 0;
+}
+
+/*距离狗粮50米提示卡片*/
+.dog_tip_box{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 8;
+}
+
+.tip_title{
+  width: 89rpx;
+  height: 42rpx;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFkAAAAqCAMAAADvYwfyAAAAM1BMVEVHcEz////////////////////////////////////////////////////////////////P0YphAAAAEHRSTlMAEDAg72DfgEC/z5+Pr3BQj3sEyQAAAiBJREFUeF6112GPgyAMBuCCQIvq7P//tRdObGlkRJK79xN0+EjAMQeerngAqlnumoNuIl4hLXl81pCvBLdLK9QG9JP5CjYy1xxauxnOXHOeZpQJIWIjR5nkrbAzkzbZYautaFAZ3MiJGek3q1x+9aEkGXh1cv/lKRMze5WZmbgbKImm5EHGZhN/yySyG8t20giwczf0lEvPjWTSQpYbvZHPQoxk2RIOC4DngVycU2RkTiLbnQSwK/2BuhgjGVs5i2wnqY+0LsZqJADsy7VxDOWDJRGW2grwSkawT1Jo5Q9rkvS2vry2MqusUdkHU1nZJKvcPzcGsqUcD2VCREz3Z6XzXd5tJY5lfBAiI7Z3BQlKJc/Kxsr/LsvgbGUV51fDyryN5flnQ8bhWzkiRpEjIv2ZnJnz4zs4kuOEvLfyNpBDadCEjCqbs+4RnpJDK++tjFdOcFhCVV6G8vh8tgkuXiL4C5yQYyuvVdbgWt9VaFqmVmaRj3vS1+gqh7fyYmRqZeIm6T7381uZvsv1Qn29wr4ccpqVqd3GWz6MLOnLYGRie6WeKNvVeilHI4OVT+b2jTBPyTiSIcn+af5GjrKBXdkGHnJq5MD8Efkx6YVKto5M5hOqu5JVLi1s3+s+ZtLEGitXs5VzR9YkmfQKdXRfpll5BzSj4zcZ1ofsibzKpbuwxjf/p6AkdWV7z/EvrC6BnfRCGjChJk6qvlYWGaN9J50f+OSfZJ2DScIAAAAASUVORK5CYII=');
+  background-size: 89rpx 42rpx;
+  margin:50rpx auto;
+}
+
+.tip_text{
+  width: 270rpx;
+  font-size: 20rpx;
+  margin:0 auto;
+  margin-top: 60rpx;
+  color: #fff;
+}
+
+.tip_dog_food_num{
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.get_dog_food_btn{
+  width: 158rpx;
+  height: 44rpx;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 44rpx;
+  border:1px solid #fff;
+  border-radius: 50rpx;
+  color: #fff;
+  margin:0 auto;
+  margin-top: 90rpx;
+}
+
+.not_get_dog_food{
+  width: 158rpx;
+  height: 44rpx;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 44rpx;
+  border:1px solid #fff;
+  border-radius: 50rpx;
+  color: #fff;
+  margin:0 auto;
+  margin-top: 90rpx;
+  text-decoration: line-through;
+}
+
+.tip_card{
+  width: 350rpx;
+  height: 470rpx;
+  background-image: linear-gradient(180deg, #dfd889 0, #db904e 100%);
+  border:5px solid rgba(255, 255, 255, 0.5);
+  background-clip: padding-box;
+  border-radius: 4px;
+  position: relative;
+  z-index: 10;
+}
+
+.close_dog_tip {
+  color: #fff;
+  position: absolute;
+  margin-top: 0;
+  margin-left: 0;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+
+.close_dog_tip:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 21px;
+  height: 1px;
+  background-color: currentColor;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.close_dog_tip:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 21px;
+  height: 1px;
+  background-color: currentColor;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+
+
+/*狗粮卡提示卡片动画*/
+.dog_food_tip{
+  animation: dog_food_tip 1s forwards;
+  position: relative;
+  -webkit-backface-visibility: hidden!important;
+  -ms-backface-visibility: hidden!important;
+  backface-visibility: hidden!important;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 10;
+}
+
+
+@-webkit-keyframes dog_food_tip {
+  0% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    opacity: 0;
+    z-index: 10;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    z-index: 10;
+  }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+    z-index: 10;
+  }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    z-index: 10;
+  }
+  100% {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+    transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+    z-index: 10;
+  }
+}
+
+/*资料卡片展示与隐藏动画*/
+.card_in{
+  animation: card_in 1s forwards;
+}
+
+@keyframes card_in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none
+  }
+}
+
+
+.has_give_food{
+  background: #fff;
+  height: 480rpx;
+  width: 100%;
+  margin-top: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.has_give_food image{
+  display: block;
+  width: 488rpx;
+  height: 95rpx;
+  margin:0 auto;
+}
+
+.fail_icon{
+  display: block;
+  width: 142rpx;
+  height: 142rpx;
+  margin-top: -71rpx;
+  position: absolute;
+  right: 20rpx;
+}
+
+.fail_give_food{
+  background: #fff;
+  height: 480rpx;
+  width: 100%;
+  margin-top: -1px;
+  position: relative;
+}
+
+.dog_icon{
+  display: block;
+  width: 186rpx;
+  height: 202rpx;
+  margin:50rpx auto 30rpx auto;
+  transform: translateX(30rpx);
+}
+
+.fail_tip{
+  font-size: 26rpx;
+  line-height: 1.8;
+  text-align: center;
+  color: #999;
+  max-width: 70%;
+  margin:0 auto;
+}
+
+/*商城*/
+.food_mall{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+
+}
+
+.food_card{
+  width: 678rpx;
+  height: 775rpx;
+  margin:0 auto;
+  background: #fff;
+  background-color: #44aca6;
+  border:1px solid #fff;
+  border-radius: 14rpx;
+  box-sizing: border-box;
+  padding:40rpx;
+  position: relative;
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_snow_bg.png);
+  background-size: 100% 100%;
+}
+
+.food_img{
+  width:180rpx;
+  height: 150rpx;
+  display: block;
+  margin:0 auto;
+}
+
+.card_food{
+  width: 33.33%;
+  float: left;
+  margin-bottom: 50rpx;
+  text-align: center;
+  font-size:30rpx;
+  color: #fff;
+  display: block;
+  box-sizing: border-box;
+}
+
+.pay_food{
+  width:100rpx;
+  height: 40rpx;
+  margin:0 auto;
+  line-height: 40rpx;
+  border-radius: 30rpx;
+  border:1px solid #fff;
+}
+
+.food_num{
+  margin:10rpx 0;
+}
+
+/*狗粮卡*/
+.dog_food_card{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.food_card_text_box{
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 1.8;
+  margin-top: 50rpx;
+}
+
+.dog_food{
+  width: 190rpx;
+  height: 218rpx;
+  margin:80rpx auto;
+}
+
+.receive_btn{
+   width: 200rpx;
+   height: 60rpx;
+   line-height: 60rpx;
+   text-align: center;
+   border-radius: 40rpx;
+   font-size: 30rpx;
+   border:1px solid #fff;
+   margin:0 auto;
+}
+
+.receive_btn button{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  line-height: 60rpx;
+  padding:0;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.count_down{
+  color: #fff;
+  margin:20rpx;
+  display: inline-block;
+  box-sizing: border-box;
+  padding:10rpx 20rpx;
+  font-size: 30rpx;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 40rpx;
+}
+
+.nav_food_num{
+  position: fixed;
+  bottom: 15vh;
+  right: 0;
+  width: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  padding-right: 20rpx;
+  background: #fff;
+  font-size: 30rpx;
+  border-radius: 4rpx;
+}
+
+.nav_food_num .food_cover_image{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin:10rpx;
+  margin-left: 20rpx;
+}
+
+.food_cover_num{
+  display: inline-block;
+  color: #333;
+  height: 60rpx;
+  line-height: 60rpx;
+  position: absolute;
+}
+
+/*信件层及动画*/
+.email_level{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(56, 159, 153, 1);
+  z-index: 30;
+}
+
+.email_level_in{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient_top{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 10;
+  background: -webkit-linear-gradient(90deg, rgba(64,150,238,0) 0, rgba(56, 159, 153, 1) 100%);
+}
+
+.gradient_bottom{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 10;
+  background-image: -webkit-linear-gradient(-90deg, rgba(64,150,238,0) 0, rgba(56, 159, 153, 1) 100%);
+}
+
+.text_content{
+  height: 80%;
+  overflow: hidden;
+  /*background: red;*/
+}
+
+.text_content text{
+  display: block;
+  text-align: center;
+  line-height: 2.2;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.text_content_in{
+  box-sizing: border-box;
+  padding-top: 500rpx;
+  animation: text_content 50s linear forwards;
+}
+
+.space{
+  width: 100%;
+  height: 80rpx;
+}
+
+.next_step{
+  width:70rpx;
+  height: 70rpx;
+  border:1px solid #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  position: fixed;
+  right: 60rpx;
+  top: 60rpx;
+  z-index: 222;
+  font-size: 28rpx;
+}
+
+@keyframes text_content {
+   0%{
+     transform: translateY(0%);
+   }
+   100%{
+     transform: translateY(-100%);
+   }
+}
+
+/*红包*/
+.red_wallet{
+  width: 452rpx;
+  height: 598rpx;
+  position: fixed;
+  left: 50%;
+  top: 0;
+  box-sizing: border-box;
+  padding:20rpx;
+  margin-left: -226rpx;
+  margin-top: 160rpx;
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_redwallet_bg.png);
+  background-size: 100%;
+  display: none;
+}
+
+.close_red_wallet{
+  width: 36rpx;
+  height: 36rpx;
+  position: relative;
+  left: 370rpx;
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_icon_close_redwallet.png);
+  background-size: 100%;
+}
+
+.red_wallet_text{
+   font-size: 32rpx;
+   color: #fff8c3;
+   text-align: center;
+}
+
+.red_wallet_text1{
+  margin: 36rpx auto;
+}
+
+.get_red_wallet{
+  width: 100rpx;
+  height: 100rpx;
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_get_redwallet_btn.png);
+  background-size: 100%;
+  margin:0 auto;
+  margin-top: 120rpx;
+}
+
+.getwallet{
+  animation: getwallet 2s;
+}
+
+@keyframes getwallet {
+   0%{
+      transform: rotateY(0deg)
+   }
+   100%{
+     transform: rotateY(540deg)
+   }
+}
+
+.has_open_redwallet{
+   width: 446rpx;
+   height: 653rpx;
+   background-image: url(https://single-dog.playonwechat.com/static/home/home_getwallet_bg.png);
+   background-size: 100%;
+   position: fixed;
+   left: 50%;
+   margin-left: -223rpx;
+   margin-top: 150rpx;
+   display: none;
+}
+
+.has_get_wallet{
+  color: #fff8c3;
+  text-align: center;
+  margin-top: 160rpx;
+}
+
+.close_get_wallet{
+  width: 44rpx;
+  height: 44rpx;
+  border:5px solid transparent;
+  position: relative;
+  left: 400rpx;
+  top: -20rpx;
+  background-image: url(https://single-dog.playonwechat.com/static/home/home_icon_close_redwallet.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.get_wallet_num{
+  font-size: 80rpx;
+  font-weight: bold;
+  color:  #fff8c3;
+  text-align: center;
+  margin-top: 80rpx;
+}
+
+.get_wallet_num text{
+  font-size: 30rpx;
+  display: inline-block;
+  margin-left: 10rpx;
+}
+
+.get_wallet_tip{
+  font-size: 24rpx;
+  text-align: center;
+  color: #e8e1ad;
+  margin-top: 144rpx;
+}
+
+.RedWallet{
+  display: block;
+  animation: RedWallet 1.5s forwards;
+}
+
+@keyframes RedWallet {
+  0%, 100%, 20%, 40%, 60%, 80% {
+   -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+   transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+ }
+ 0% {
+   opacity: 0;
+   -webkit-transform: scale3d(.3, .3, .3);
+   transform: scale3d(.3, .3, .3)
+ }
+ 20% {
+   -webkit-transform: scale3d(1.1, 1.1, 1.1);
+   transform: scale3d(1.1, 1.1, 1.1)
+ }
+ 40% {
+   -webkit-transform: scale3d(.9, .9, .9);
+   transform: scale3d(.9, .9, .9)
+ }
+ 60% {
+   opacity: 1;
+   -webkit-transform: scale3d(1.03, 1.03, 1.03);
+   transform: scale3d(1.03, 1.03, 1.03)
+ }
+ 80% {
+   -webkit-transform: scale3d(.97, .97, .97);
+   transform: scale3d(.97, .97, .97)
+ }
+ 100% {
+   opacity: 1;
+   -webkit-transform: scale3d(1, 1, 1);
+   transform: scale3d(1, 1, 1)
+ }
+}
+
+.HasGetRedWallet{
+  display:block;
+}
+
+.CloseHasGetRedWallet{
+  display: none;
+}

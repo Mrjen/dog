@@ -1,0 +1,17 @@
+<!--pages/rescueMe/rescueMe.wxml-->
+<view class="container">
+    <view class="in_card">
+        <image class="persion_img" src="{{avatarUrl}}"></image>
+        <view class="persion_name">{{nickName}}</view>
+        <view class="persion_name">单身狗</view>
+        <view class="dog_food_num"><view class="dog_food_icon"></view><view>x{{foodNum}}</view></view>
+        <view class="num_tip">我的狗粮</view>
+        <view class="dog_food_num"><view class="dog_dog_icon"></view><view>x{{rescueMe}}</view></view>
+        <navigator class="num_tip rescue_me" url="../rescueMeList/rescueMeList">查看解救我的人</navigator>
+    </view>
+</view>
+<view class="bottom_nav">
+    <view  hover-class="none" wx:for="{{navData}}" class="nav_item">
+      <image data-inx="{{index}}" class="nav_icon" bindtap="checkNav" src="{{item.hoverIcon==false?item._src:item.hover_src}}"></image>
+    </view>
+</view>
